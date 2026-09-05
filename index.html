@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="384x384" />
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+  <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+  <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Preconnect & DNS Prefetch for faster first-byte -->
+  <link rel="preconnect" href="https://highcon.in" crossorigin />
+  <link rel="dns-prefetch" href="https://highcon.in" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.clarity.ms" />
+
+  <!-- SEO & Social Meta Placeholders -->
+  <title>__TITLE_PLACEHOLDER__</title>
+  <meta name="description" content="__DESCRIPTION_PLACEHOLDER__" />
+  <meta name="keywords" content="__KEYWORDS_PLACEHOLDER__" />
+  <meta property="og:title" content="__OG_TITLE_PLACEHOLDER__" />
+  <meta property="og:description" content="__OG_DESCRIPTION_PLACEHOLDER__" />
+  <meta property="og:url" content="__OG_URL_PLACEHOLDER__" />
+  <meta property="og:image" content="__OG_IMAGE_PLACEHOLDER__" />
+  <meta property="og:image:alt" content="__OG_IMAGE_ALT_PLACEHOLDER__" />
+  <meta name="twitter:title" content="__OG_TITLE_PLACEHOLDER__" />
+  <meta name="twitter:description" content="__OG_DESCRIPTION_PLACEHOLDER__" />
+  <meta name="twitter:image" content="__OG_IMAGE_PLACEHOLDER__" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="__CANONICAL_PLACEHOLDER__" />
+
+  <!-- Prevent unstyled prerender flash before CSS + React hydrate -->
+  <style id="critical-anti-fouc">
+    #root:not([data-hydrated="true"]) {
+      visibility: hidden;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+
+  <!-- ✅ Injected production scripts (GA + Clarity) -->
+  <%- prodScripts %>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
