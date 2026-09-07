@@ -26,6 +26,7 @@ const Contact = () => {
 
       <HeroSection
         variant="seven"
+        contentSized
         data={{
           image: {
             src: Images?.ContactHeroBg,

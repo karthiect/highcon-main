@@ -23,6 +23,7 @@ interface HeroSectionPropsType {
   showScrollButton?: boolean;
   onScrollClick?: () => void;
   HeroContent?: ElementType;
+  contentSized?: boolean;
 }
 
 const HeroSection = ({
@@ -36,12 +37,13 @@ const HeroSection = ({
   showScrollButton,
   onScrollClick,
   HeroContent,
+  contentSized = false,
 }: HeroSectionPropsType) => {
   const { image, title, subtitle, description } = data;
   const { src, alt } = image;
   return (
     <section
-      className="relative h-[50vh] min-h-fit overflow-hidden bg-cover bg-center bg-no-repeat md:h-[80vh]"
+      className={`relative overflow-hidden bg-cover bg-center bg-no-repeat ${contentSized ? "h-auto min-h-[50vh] md:min-h-[80vh]" : "h-[50vh] min-h-fit md:h-[80vh]"}`}
       style={{
         backgroundImage: `url(${src})`,
       }}
@@ -52,7 +54,7 @@ const HeroSection = ({
       <Header />
 
       <div
-        className={`relative z-10 flex h-[50vh] min-h-fit flex-row flex-wrap items-${contentAlignment} justify-start md:h-[80vh] ${contentAlignment === "end" ? "ps-4 pe-2 pt-25 pb-2 md:ps-6 md:pe-4 md:pt-50 md:pb-4 lg:ps-8 lg:pe-6 lg:pb-6" : "px-4 py-25 md:px-6 md:py-50 lg:px-8"}`}
+        className={`relative z-10 flex ${contentSized ? "h-auto min-h-[50vh] md:min-h-[80vh]" : "h-[50vh] min-h-fit md:h-[80vh]"} flex-row flex-wrap items-${contentAlignment} justify-start ${contentAlignment === "end" ? "ps-4 pe-2 pt-25 pb-2 md:ps-6 md:pe-4 md:pt-50 md:pb-4 lg:ps-8 lg:pe-6 lg:pb-6" : "px-4 py-25 md:px-6 md:py-50 lg:px-8"}`}
       >
         {/* Hero Content */}
         {(variant === "one" && (
