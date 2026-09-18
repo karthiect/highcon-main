@@ -170,6 +170,15 @@ export function Footer({ isBulk = true }: FooterProps) {
               >
                 Contact Us
               </Link>
+              <Link
+                to={normalizePath(paths.privacyPolicy)}
+                className={`block font-['Manrope'] transition-all duration-300 ${normalizePath(location.pathname) === normalizePath(paths.privacyPolicy)
+                  ? "scale-105 text-cyan-400"
+                  : "text-white hover:text-cyan-400"
+                  }`}
+              >
+                Cookie Policy
+              </Link>
             </nav>
           </div>
         </div>
@@ -190,20 +199,27 @@ export function Footer({ isBulk = true }: FooterProps) {
               </p> */}
             </div>
 
-            <div className="flex items-center gap-2">
-              <span className="font-['Manrope'] text-[10px] tracking-wide text-white sm:text-xs sm:tracking-wider">
+            <div className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap">
+              <span className="font-['Manrope'] text-[10px] leading-none text-white sm:text-xs">
                 Powered By
               </span>
               <a
                 href={paths?.poweredByECS}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center"
+                className="relative block h-5 shrink-0 overflow-hidden sm:h-6"
+                style={{ aspectRatio: "3751 / 1648" }}
               >
+                {/* Frame the visible artwork inside the padded 4500px-square asset. */}
                 <img
                   src={ECSLogo}
                   alt="ECS Logo"
-                  className="h-6 w-auto sm:h-8"
+                  className="absolute block h-auto max-w-none"
+                  style={{
+                    width: `${(4500 / 3751) * 100}%`,
+                    left: `${(-358 / 3751) * 100}%`,
+                    top: `${(-1527 / 1648) * 100}%`,
+                  }}
                 />
               </a>
             </div>

@@ -63,35 +63,9 @@ export default defineConfig(({ mode }) => {
       createHtmlPlugin({
         inject: {
           data: {
-            prodScripts:
-              mode === "production"
-                ? `
-             
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8X4CTBPSWS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8X4CTBPSWS');
-</script>
-
-
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "vg3a3h6try");
-</script>
-`
-                : "",
+            prodScripts: "",
           },
           tags: [
-            // ✅ Preconnects (removed hardcoded CSS injection - let Vite handle it)
             {
               tag: "link",
               attrs: {
@@ -106,22 +80,6 @@ export default defineConfig(({ mode }) => {
               attrs: {
                 rel: "dns-prefetch",
                 href: "https://highcon.in",
-              },
-              injectTo: "head",
-            },
-            {
-              tag: "link",
-              attrs: {
-                rel: "preconnect",
-                href: "https://www.googletagmanager.com",
-              },
-              injectTo: "head",
-            },
-            {
-              tag: "link",
-              attrs: {
-                rel: "preconnect",
-                href: "https://www.clarity.ms",
               },
               injectTo: "head",
             },
