@@ -1,19 +1,16 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { useConsent } from "../context/ConsentContext";
 import { Helmet } from "react-helmet-async";
 
 export const PrivacyPolicy: React.FC = () => {
-  const { consentState, openConsentBanner } = useConsent();
-
   return (
     <>
       <Helmet>
         <title>Privacy & Cookie Policy | Highcon Innovations International</title>
         <meta
           name="description"
-          content="Privacy and Cookie Policy for Highcon Innovations International detailing consent-gated Google Analytics 4 and Microsoft Clarity usage."
+          content="Privacy and Cookie Policy for Highcon Innovations International detailing Google Analytics 4 and Microsoft Clarity usage."
         />
       </Helmet>
       <Header />
@@ -38,8 +35,7 @@ export const PrivacyPolicy: React.FC = () => {
             </p>
             <ul className="list-disc space-y-2 pl-5 text-gray-700">
               <li>
-                <strong>Consent-Gated Loading:</strong> Neither Google Analytics nor Microsoft Clarity scripts are loaded
-                or executed until you explicitly grant consent by clicking "Accept analytics".
+                <strong>Analytics:</strong> Google Analytics and Microsoft Clarity are enabled when you visit this website.
               </li>
               <li>
                 <strong>Privacy Controls:</strong> Ad storage, ad user data, and ad personalization signals remain denied by default.
@@ -52,19 +48,6 @@ export const PrivacyPolicy: React.FC = () => {
             </ul>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-gray-900">Your Current Preference</h2>
-            <p className="capitalize">
-              Current Analytics Status: <span className="font-bold text-cyan-600">{consentState}</span>
-            </p>
-            <button
-              type="button"
-              onClick={openConsentBanner}
-              className="rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-400"
-            >
-              Change Cookie Preferences
-            </button>
-          </section>
         </div>
       </div>
       <Footer />

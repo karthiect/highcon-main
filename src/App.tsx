@@ -9,7 +9,6 @@ import {
 import { paths } from "./constants/paths";
 import MetaTags from "./components/MetaTags";
 import SchemaManager from "./components/SchemaManager";
-import { ConsentProvider } from "./context/ConsentContext";
 import { Analytics } from "./components/Analytics";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -40,8 +39,7 @@ const ScrollToTop = () => {
 
 const App = () => {
   return (
-    <ConsentProvider>
-      <Router>
+    <Router>
         <ScrollToTop />
         <Analytics />
         <main className="min-h-screen bg-white">
@@ -105,8 +103,7 @@ const App = () => {
             <Route path={"*"} element={<NotFound />} />
           </Routes>
         </main>
-      </Router>
-    </ConsentProvider>
+    </Router>
   );
 };
 

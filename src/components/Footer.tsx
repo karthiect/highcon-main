@@ -213,7 +213,7 @@ export function Footer({ isBulk = true }: FooterProps) {
                 {/* Frame the visible artwork inside the padded 4500px-square asset. */}
                 <img
                   src={ECSLogo}
-                  alt="ECS Logo"
+                  alt="ECT Logo"
                   className="absolute block h-auto max-w-none"
                   style={{
                     width: `${(4500 / 3751) * 100}%`,

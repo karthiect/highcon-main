@@ -24,7 +24,7 @@ export const paths = {
     "/bulk-material-handling/:layerOne/:layerTwo/:layerThree/:layerFour/:layerFive/",
   materialProductLayerFive:
     "/material-handling/:layerOne/:layerTwo/:layerThree/:layerFour/:layerFive/",
-  poweredByECS: "https://exalttcoresolutions.com/",
+  poweredByECS: "https://exxaltcoretechnology.com/",
   privacyPolicy: "/privacy-policy/",
   notFound: "/not-found/",
 };
