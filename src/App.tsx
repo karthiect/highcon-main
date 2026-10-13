@@ -10,6 +10,7 @@ import { paths } from "./constants/paths";
 import MetaTags from "./components/MetaTags";
 import SchemaManager from "./components/SchemaManager";
 import { Analytics } from "./components/Analytics";
+import { CookieNotice } from "./components/CookieNotice";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -42,6 +43,7 @@ const App = () => {
     <Router>
         <ScrollToTop />
         <Analytics />
+        <CookieNotice />
         <main className="min-h-screen bg-white">
           <MetaTags />
           <SchemaManager />
